@@ -53,7 +53,6 @@ public class RPSrunner {
 				makeMove = false;
 			}
 		}
-		
 		input.close();
 		System.out.println("Thanks for playing!");
 	}
