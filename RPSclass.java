@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class RPSclass {
-
+	
+	//introduction to the program and game
 	public String getReady(Scanner input){
 		System.out.println("Welcome to Rock, Paper Scissors! Whats your name?");
 		String name = input.nextLine();
@@ -14,6 +15,7 @@ public class RPSclass {
 		return name;
 	}
 	
+	//converts the most recent play to a number and inserts it in the arraylist of moves
 	public ArrayList<Integer> addMove(String pMove, ArrayList<Integer> player) {
 		pMove =  pMove.toLowerCase();
 		int play;
@@ -25,6 +27,7 @@ public class RPSclass {
 		return player;
 	}
 	
+	//algorithm to find the next move the AI should play
 	public ArrayList<Integer> makeCMove(ArrayList<Integer> player, ArrayList<Integer> computer, int round) {
 		int next = -1;
 		if(round>6){
@@ -67,6 +70,7 @@ public class RPSclass {
 		return computer;
 	}
 	
+	//compares the user and AI's moves
 	public int[] findWinner(int[] score, ArrayList<Integer> player, ArrayList<Integer> computer){
 		int pLast = player.get(player.size()-1);
 		int cLast = computer.get(computer.size()-1);
@@ -75,7 +79,8 @@ public class RPSclass {
 		else score[0] += 1;
 		return score;
 	}
-
+	
+	//output round info
 	public void displayMovesAndScore(int round, String name, int[] score, ArrayList<Integer> player, ArrayList<Integer> computer) {
 		int c = computer.get(computer.size()-1);
 		int p = player.get(player.size()-1);
